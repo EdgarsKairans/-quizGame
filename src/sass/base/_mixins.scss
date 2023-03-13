@@ -1,0 +1,23 @@
+@mixin gameItems {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid green;
+    cursor: pointer;
+
+
+}
+
+@mixin gameBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid green;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    
+
+}

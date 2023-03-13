@@ -1,0 +1,34 @@
+.modal {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    width: 40vw;
+    height: 40vh;
+    background-color: rgb(193, 224, 214);
+ //   overflow: hidden;
+    top: 30vh;
+    right: 30vw;
+    &__result {
+        position: relative;
+        top: 50px;
+        &-grade {
+            color: black;
+            font-size: 20px;
+        }
+
+        &-playAgain {
+            position: absolute;
+            left: 20%;
+            top: 0px;
+        }
+
+        &-menu {
+            position: absolute;
+            right: 20%;
+            top: 0px;
+        }
+
+    }
+}

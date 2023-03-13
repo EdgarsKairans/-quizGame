@@ -1,0 +1,28 @@
+.nav{
+//padding-bottom: 3500px;
+padding-top: 80px;
+max-height: 700px;
+    &__box {
+        list-style-type: none;
+        cursor: pointer;
+        
+        &-item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //padding-left: 100px;
+            width: 90px;
+            height: 50px;
+            font-size: 30px;
+            float: left;
+            border: 2px solid green;
+            
+
+            &:hover {
+                font-size: 42px;
+            }
+            
+        }
+    }
+}
