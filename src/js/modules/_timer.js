@@ -11,8 +11,7 @@ export default function timerFun(pos, timeSec = 120, logSec) {
 
 	function updateTime() {
 		let seconds = totalSeconds - secondsElapsed;
-		console.log(seconds);
-		console.log(intervalId);
+
 		if (seconds < 0) {
 			clearInterval(intervalId);
 			logSec();
@@ -35,10 +34,7 @@ export default function timerFun(pos, timeSec = 120, logSec) {
 				endTime();
 				clearInterval(intervalId);
 			}
-
 			intervalId = setInterval(updateTime, 1000);
-			console.log("startttt timer");
-			console.log(intervalId);
 		}
 		startTimer();
 	} else if (pos === "end") {
