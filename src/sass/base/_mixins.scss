@@ -21,3 +21,233 @@
     
 
 }
+
+@mixin elementChildren {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 20px 40px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #eee;
+
+    }
+}
+
+@mixin gameBtn {
+    position: absolute;
+    max-width: 180px;
+    min-width: 120px;
+    padding: 20px 20px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    & > span {
+        padding-left: 12px;
+    }
+    &:hover {
+        background-color: #fff;
+        color: #333;
+    }
+}
+
+@mixin elementStyle {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+    min-height: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: .4px dotted rgb(53, 52, 52);
+    
+}
+
+@mixin elementStyleForScreenMin992 {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        gap: 10px;
+        min-height: 50px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-bottom: .4px dotted rgb(53, 52, 52);
+}
+
+@mixin elementChildrenForScreenMin992 {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 15px 25px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #eee;
+
+    }
+}
+
+@mixin gameBtnForScreenMin992 {
+    position: absolute;
+    max-width: 180px;
+    min-width: 120px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+
+    &>span {
+        padding-left: 12px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #333;
+    }
+}
+
+
+@mixin elementStyleForScreenMin768 {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+    min-height: 50px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: .4px dotted rgb(53, 52, 52);
+}
+
+@mixin elementChildrenForScreenMin768 {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #eee;
+
+    }
+}
+
+@mixin gameBtnForScreenMin768 {
+    position: absolute;
+    max-width: 180px;
+    min-width: 120px;
+    padding: 5px 15px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+
+    &>span {
+        padding-left: 12px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #333;
+    }
+}
+
+
+
+@mixin elementStyleForScreenMin576 {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    min-height: 50px;
+    padding: 12px 15px;
+    border-bottom: .4px dotted rgb(53, 52, 52);
+}
+
+@mixin elementChildrenForScreenMin576 {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #eee;
+
+    }
+}
+
+@mixin gameBtnForScreenMin576 {
+    position: absolute;
+    max-width: 180px;
+    min-width: 80px;
+    padding: 5px 15px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+
+    &>span {
+        padding-left: 10px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #333;
+    }
+}
+
+
+
+@mixin elementStyleForScreenMin320 {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    min-height: 50px;
+    padding: 12px 15px;
+    border-bottom: .4px dotted rgb(53, 52, 52);
+}
+
+@mixin elementChildrenForScreenMin320 {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 15px 15px;
+    transition: background-color 0.2s ease;
+    min-height: 25px;
+    min-width: 80px;
+
+    &:hover {
+        background-color: #eee;
+
+    }
+}
+
+@mixin gameBtnForScreenMin320 {
+    position: absolute;
+    font-size: 8px;
+    max-width: 80px;
+    min-width: 60px;
+    padding: 5px 5px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+
+    &>span {
+        padding-left: 10px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #333;
+    }
+}

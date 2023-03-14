@@ -495,11 +495,11 @@ function checkAnswerNav(i) {
 function addEventInGame() {
 	if (menuSelected[1] == "Flag") {
 		capitalsBox.forEach((elem) => {
-			elem.style.opacity = ".2";
+			elem.style.opacity = ".35";
 		});
 
 		worldPartBox.forEach((elem) => {
-			elem.style.opacity = ".2";
+			elem.style.opacity = ".35";
 		});
 
 		addDefaultAnswersCapital();
@@ -512,7 +512,7 @@ function addEventInGame() {
 		});
 	} else if (menuSelected[1] == "Flag and Capital") {
 		worldPartBox.forEach((elem) => {
-			elem.style.opacity = ".2";
+			elem.style.opacity = ".35";
 		});
 		console.log("menu selected flag and capital");
 		console.log(menuSelected[2]);

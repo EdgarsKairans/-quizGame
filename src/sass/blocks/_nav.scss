@@ -1,11 +1,14 @@
 .nav{
 //padding-bottom: 3500px;
 padding-top: 80px;
+padding-bottom: 120px;
+margin: 0 auto;
 max-height: 700px;
     &__box {
+        margin-left: 200px;
         list-style-type: none;
         cursor: pointer;
-        
+
         &-item {
             cursor: pointer;
             display: flex;

@@ -1,75 +1,7 @@
 .main{
-    // &__menu {
-    //     //min-height: 2000px;
-    //     &__container {
-    //         margin: 0 auto;
-    //         //display: none;
-    //         grid-template-rows: 1fr 1fr 1fr;
-    //         gap: 70px;
-    //     }
-
-    //     &__countries {
-    //         display: grid;
-    //         grid-template-columns: repeat(6, 16.6%);
-    //         align-items: center;
-    //         justify-items: center;
-    //         gap: 10px;
-    //         min-height: 50px;
-    //         padding-top: 50px;
-    //         //border: 1px solid black;
-    //         &>* {
-    //             cursor: pointer;
-    //             border: 1px solid black;
-    //             padding: 20px 40px 20px 40px;
-
-    //         }
-    //     }
-
-    //     &__tasks {
-    //         display: grid;
-    //         grid-template-columns: repeat(3, 33%);
-    //         align-items: center;
-    //         justify-items: center;
-    //         padding-top: 50px;
-    //         &>* {
-    //             border: 1px solid black;
-    //             padding: 20px 40px 20px 40px;
-    //             cursor: pointer;
-    //         }
-    //     }
-
-    //     &__mode {
-    //         display: grid;
-    //         grid-template-columns: repeat(3, 33%);
-    //         align-items: center;
-    //         justify-items: center;
-    //         padding-top: 50px;
-    //         &>* {
-    //             border: 1px solid black;
-    //             padding: 20px 40px 20px 40px;
-    //             cursor: pointer;
-    //         }
-
-    //     }
-
-    //     &__btn {
-    //         padding-top: 50px;
-    //         &-start {
-    //             max-width: 150px;
-    //             padding: 20px 40px 20px 40px;
-    //             border: 2px solid black;
-
-    //         }
-    //         &-info {
-    //             //display: none;
-    //         }
-    //     }
-    // }
+    font-family: 'Arial', sans-serif;
     &__menu {
-        background: #f8f8f8;
-        /* Add a light gray background to the menu container */
-        font-family: 'Arial', sans-serif;
-        /* Change the font family for the menu items */
+        background: $mainBackground;
 
         &__container {
             margin: 0 auto;
@@ -78,61 +10,28 @@
         }
 
         &__countries {
-            display: grid;
-            grid-template-columns: repeat(6, 16.6%);
-            align-items: center;
-            justify-items: center;
-            gap: 10px;
-            min-height: 50px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: .2px dotted rgb(121, 118, 118);
+
+            grid-template-columns: repeat(6, 16%);
+            @include elementStyle;
 
             &>* {
-                cursor: pointer;
-                border: 1px solid #ddd;
-                /* Change the border color for the menu items */
-                padding: 20px 40px;
-                /* Remove the bottom and top padding to make the menu items shorter */
-                transition: background-color 0.2s ease;
-                /* Add a transition effect to the background color on hover */
-
-                &:hover {
-                    background-color: #eee;
-                    /* Change the background color on hover */
-                }
+                @include elementChildren;
             }
         }
 
         &__tasks {
-            display: grid;
             grid-template-columns: repeat(3, 33%);
-            align-items: center;
-            justify-items: center;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: .2px dotted grey;
+            @include elementStyle;
 
             &>* {
-                border: 1px solid #ddd;
-                padding: 20px 40px;
-                cursor: pointer;
-                transition: background-color 0.2s ease;
-
-                &:hover {
-                    background-color: #eee;
+                @include elementChildren;
                 }
-            }
         }
 
         &__mode {
-            display: grid;
+
             grid-template-columns: repeat(3, 33%);
-            align-items: center;
-            justify-items: center;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: .2px dotted grey;
+            @include elementStyle;
 
             &>* {
                 border: 1px solid #ddd;
@@ -148,24 +47,9 @@
 
         &__btn {
             padding-top: 50px;
-
+            margin-bottom: 100px;
             &-start {
-                max-width: 150px;
-                padding: 20px 40px;
-                border: 2px solid #333;
-                /* Change the border color for the start button */
-                background-color: #333;
-                color: #fff;
-                /* Change the text color for the start button */
-                text-transform: uppercase;
-                /* Make the text uppercase for the start button */
-                font-weight: bold;
-                /* Add some extra weight to the text for the start button */
-
-                &:hover {
-                    background-color: #fff;
-                    color: #333;
-                }
+                @include gameBtn;
             }
 
             &-info {
@@ -177,24 +61,22 @@
     &__game {
         display: grid;
         display: none;
-        //margin: 0 auto;
-        padding-left: 200px;
-                background: #f8f8f8;
-                /* Add a light gray background to the menu container */
+
+        background: $mainBackground;
+
         font-family: 'Arial', sans-serif;
 
         &__container {
             margin: 0 auto;
-                        grid-template-rows: 1fr 1fr 1fr;
-                        gap: 70px;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 70px;
         }
 
 
 
         &-flag {
             margin: 0 auto;
-            //justify-content: center;
-            //align-items: center;
+
 
             img {
                max-width: 250px;
@@ -204,79 +86,33 @@
         }
 
         &-countries {
-            display: grid;
+
             grid-template-columns: repeat(4, 25%);
-            align-items: center;
-            justify-items: center;
-            gap: 10px;
-            min-height: 50px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: .4px dotted rgb(53, 52, 52);
+            @include elementStyle;
             
             &>* {
-                cursor: pointer;
-                border: 1px solid #ddd;
-                /* Change the border color for the menu items */
-                padding: 20px 40px;
-                /* Remove the bottom and top padding to make the menu items shorter */
-                transition: background-color 0.2s ease;
-                /* Add a transition effect to the background color on hover */
-
-                &:hover {
-                    background-color: #eee;
-                    /* Change the background color on hover */
-                }
+                @include elementChildren;
             }
 
         }
 
         &-capitals {
-            display: grid;
+
             grid-template-columns: repeat(4, 25%);
-            align-items: center;
-            justify-items: center;
-            gap: 10px;
-            min-height: 50px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: .4px dotted rgb(53, 52, 52);
+            @include elementStyle;
 
             &>* {
-                cursor: pointer;
-                border: 1px solid #ddd;
-                /* Change the border color for the menu items */
-                padding: 20px 40px;
-                /* Remove the bottom and top padding to make the menu items shorter */
-                transition: background-color 0.2s ease;
-                /* Add a transition effect to the background color on hover */
-
-                &:hover {
-                    background-color: #eee;
-                    /* Change the background color on hover */
-                }
+                @include elementChildren;
             }
 
         }
 
         &-worldPart {
-            display: grid;
-            grid-template-columns: repeat(6, 16.6%);
-            align-items: center;
-            justify-items: center;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: .2px dotted grey;
+            grid-template-columns: repeat(5, 19%);
+            @include elementStyle;
 
             &>* {
-                border: 1px solid #ddd;
-                padding: 20px 40px;
-                cursor: pointer;
-                transition: background-color 0.2s ease;
-
-                &:hover {
-                    background-color: #eee;
-                }
+                @include elementChildren;
             }
         }
 
@@ -286,259 +122,31 @@
             display: flex;
             
             &-next {
-                position: absolute;
-                margin-left: 20%;
-                max-width: 150px;
-                padding: 20px 40px;
-                border: 2px solid #333;
-                /* Change the border color for the start button */
-                background-color: #333;
-                color: #fff;
-                /* Change the text color for the start button */
-                text-transform: uppercase;
-                /* Make the text uppercase for the start button */
-                font-weight: bold;
-                /* Add some extra weight to the text for the start button */
-                cursor: pointer;
-                &:hover {
-                    background-color: #fff;
-                    color: #333;
-
-                }
-
-                
+                margin-left: 25%;
+                @include gameBtn;  
             }
 
             &-previous {
-                position: absolute;
                 margin-left: 5%;
-                max-width: 150px;
-                padding: 20px 20px;
-                border: 2px solid #333;
-                /* Change the border color for the start button */
-                background-color: #333;
-                color: #fff;
-                /* Change the text color for the start button */
-                text-transform: uppercase;
-                /* Make the text uppercase for the start button */
-                font-weight: bold;
-                /* Add some extra weight to the text for the start button */
-                cursor: pointer;
-                &:hover {
-                    background-color: #fff;
-                    color: #333;
-                }
+                @include gameBtn;
             }
 
             &-menu {
-                position: absolute;
-                margin-left: 50%;
-                max-width: 150px;
-                padding: 20px 40px;
-                border: 2px solid #333;
-                /* Change the border color for the start button */
-                background-color: #333;
-                color: #fff;
-                /* Change the text color for the start button */
-                text-transform: uppercase;
-                /* Make the text uppercase for the start button */
-                font-weight: bold;
-                /* Add some extra weight to the text for the start button */
-                cursor: pointer;
-                &:hover {
-                    background-color: #fff;
-                    color: #333;
-                }
+                margin-left: 60%;
+                @include gameBtn;
             }
 
 
             &-submit {
-                position: absolute;
-                margin-left: 65%;
-                max-width: 150px;
-                padding: 20px 40px;
-                border: 2px solid #333;
-                /* Change the border color for the start button */
-                background-color: #333;
-                color: #fff;
-                /* Change the text color for the start button */
-                text-transform: uppercase;
-                /* Make the text uppercase for the start button */
-                font-weight: bold;
-                /* Add some extra weight to the text for the start button */
-                cursor: pointer;
-                &:hover {
-                    background-color: #fff;
-                    color: #333;
-                }
+                margin-left: 75%;
+                @include gameBtn;
             }
         }
     }
 }
 
-.country {
-    &-answer {
-        background-color: aqua;
-    }
-}
-
-.capital {
-    &-answer {
-        background-color: aqua;
-    }
-}
-
-.worldPart {
-    &-answer {
-        background-color: aqua;
-    }
-}
-
-.other-answer {
-    background-color: #FFF;
-}
-
-.answer-yellow {
-    background-color: yellow;
-}
-
-.no-active {
-    background: none;
-}
-
-.true-answer {
-    background-color: #85FFBD;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-
-}
-
-.selectedCountries {
-    background-color: #85FFBD;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-}
-
-.selectedTask {
-    background-color: #85FFBD;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-}
-.selectedMode {
-    background-color: #85FFBD;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-}
-.wrong-answer {
-    background-color: #FFE53B;
-    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
- }
-
-.blocked {
-    background-color: grey;
-}
 
 
 
-.activClase {
-    background-color:rgb(8, 159, 143);
-    font-size: 25px;
-    padding-bottom: 20px;
-}
-    // &__game {
-    //     display: grid;
-    //     display: none;
-    //     //margin: 0 auto;
-    //     padding-left: 200px;
-    //     background: rgba($color: #979696, $alpha: .05);
-
-    //     &__container {
-    //         margin: 0 auto;
-    //     }
 
 
-
-    //     &-flag {
-    //         margin: 0 auto;
-    //         //justify-content: center;
-    //         //align-items: center;
-
-    //         img {
-    //             max-width: 250px;
-    //             max-height: 180px;
-
-    //         }
-    //     }
-
-    //     &-countries {
-    //         display: grid;
-    //         gap: 20px;
-    //         padding-top: 20px;
-    //         grid-template-columns: repeat(4, 180px);
-    //         grid-template-rows: 80px;
-
-    //         &>* {
-    //             @include gameItems;
-    //         }
-
-    //     }
-
-    //     &-capitals {
-    //         display: grid;
-    //         gap: 20px;
-    //         grid-template-columns: repeat(4, 180px);
-    //         grid-template-rows: 80px;
-    //         padding-top: 20px;
-
-    //         &:hover {
-    //             opacity: 1;
-    //         }
-
-    //         &>* {
-    //             @include gameItems;
-    //         }
-    //     }
-
-    //     &-worldPart {
-    //         display: grid;
-    //         gap: 20px;
-    //         grid-template-columns: repeat(5, 180px);
-    //         grid-template-rows: 80px;
-    //         padding-top: 20px;
-
-    //         &:hover {
-    //             opacity: 1;
-    //         }
-
-    //         &>* {
-    //             @include gameItems;
-    //         }
-    //     }
-
-    //     &-btn {
-    //         position: relative;
-    //         padding-top: 70px;
-
-    //         &-next {
-    //             position: absolute;
-    //             margin-left: 20%;
-    //             @include gameBtn;
-
-    //         }
-
-    //         &-previous {
-    //             position: absolute;
-    //             margin-left: 10%;
-    //             @include gameBtn;
-    //         }
-
-    //         &-menu {
-    //             position: absolute;
-    //             margin-left: 40%;
-    //             @include gameBtn;
-    //         }
-
-
-    //         &-submit {
-    //             position: absolute;
-    //             margin-left: 50%;
-    //             @include gameBtn;
-    //         }
-    //     }
-    // }
