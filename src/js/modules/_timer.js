@@ -39,7 +39,6 @@ export default function timerFun(pos, timeSec = 120, logSec) {
 		startTimer();
 	} else if (pos === "end") {
 		function endTimer() {
-			console.log(intervalId);
 			timerBox.style.visibility = "hidden";
 			clearInterval(intervalId);
 			totalSeconds = secondsElapsed;
@@ -52,19 +51,4 @@ export default function timerFun(pos, timeSec = 120, logSec) {
 	}
 }
 
-// 		if (pos == "end") {
-// 			console.log("test end timer");
-// 			clearInterval(intervalId);
-// 			let secondsElapsed = 0;
-// 			let intervalId = null;
-// 			timerBox.style.visibility = "hidden";
-// 			totalSeconds = 0;
-// 			secondsElapsed = 0;
-// 			minutesLabel.textContent = "00";
-// 			secondsLabel.textContent = "00";
-// 			console.log(intervalId);
-// 			clearInterval(intervalId);
-// 			endTime();
-// 		}
-// 	return intervalId;
-// }
+

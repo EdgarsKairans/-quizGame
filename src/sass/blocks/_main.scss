@@ -56,6 +56,10 @@
                 display: none;
             }
         }
+
+        &-infoPanel {
+            visibility: hidden;
+        }
     }
 
     &__game {

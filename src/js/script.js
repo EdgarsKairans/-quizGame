@@ -69,20 +69,21 @@ function addEventInMenu(box, className, possitionInArr) {
 
 				if (e.target.classList.contains("menuCountries")) {
 					if (e.target.innerText !== "All Countries") {
-						const taskBox = Array.from(menuTaskBox);
-						taskBox.forEach((elem) => {
-							if (elem.innerText == "Flag, Capital and World Part") {
+						menuTaskBox.forEach((elem) => {
+							if (elem.innerText === "Flag, Capital and World Part") {
 								elem.style.background = "grey";
-							} else if (menuSelected[1] == "Flag, Capital and World Part") {
+							} else if (menuSelected[1] === "Flag, Capital and World Part") {
 								menuSelected[1] = null;
 							}
 						});
 					}
 
-					if (e.target.innerText == "All Countries") {
-						const taskBox = Array.from(menuTaskBox);
-						taskBox.forEach((elem) => {
-							if (elem.innerText == "Flag, Capital and World Part") {
+					if (e.target.innerText === "All Countries") {
+						menuTaskBox.forEach((elem) => {
+							if (
+								elem.innerText === "Flag, Capital and World Part" &&
+								menuSelected[1] !== "Flag, Capital and World Part"
+							) {
 								elem.style.background = "none";
 							}
 						});
@@ -91,12 +92,9 @@ function addEventInMenu(box, className, possitionInArr) {
 
 				if (e.target.classList.contains("menuTask")) {
 					if (e.target.innerText == "Flag, Capital and World Part") {
-						const regionBox = Array.from(menuCountriesBox);
-						regionBox.forEach((elem) => {
+						menuCountriesBox.forEach((elem) => {
 							if (elem.innerText !== "All Countries") {
 								elem.style.background = "grey";
-							} else {
-								elem.style.background = "none";
 							}
 						});
 
@@ -105,16 +103,29 @@ function addEventInMenu(box, className, possitionInArr) {
 						}
 					}
 					if (
-						e.target.innerText !== "Flag, Capital and World Part" &&
-						menuSelected[0] !== "All Countries"
+						e.target.innerText !== "Flag, Capital and World Part"
 					) {
-						const taskBox = Array.from(menuTaskBox);
-						taskBox.forEach((elem) => {
-							if (elem.innerText == "Flag, Capital and World Part") {
+						menuCountriesBox.forEach((elem) => {
+							if (
+								elem.style.background === "grey"
+							) {
+								elem.style.background = "none";
+							}
+								
+						});
+					}
+
+					if (e.target.innerText !== "Flag, Capital and World Part") {
+						menuTaskBox.forEach((elem) => {
+							if (
+								elem.innerText == "Flag, Capital and World Part" &&
+								menuSelected[0] !== "All Countries"
+							) {
 								elem.style.background = "grey";
 							}
 						});
 					}
+
 				}
 			}
 			if (possitionInArr === 1) {
@@ -175,9 +186,12 @@ menuBtnStart.addEventListener("click", (e) => {
 
 function onInfoPanel(onOrOff) {
 	if (onOrOff) {
-		console.log("test panel");
-		const infoPanel = document.querySelector(".main__menu__btn-info");
-		infoPanel.innerText = "Please select all tasks!";
+		const infoPanel = document.querySelector(".main__menu-infoPanel");
+		infoPanel.style.visibility = "visible";
+		function showInfoPanel() {
+			infoPanel.style.visibility = "hidden";
+		}
+		 const infoPanelTimer = setTimeout(showInfoPanel, 2000);
 	}
 }
 
@@ -231,9 +245,7 @@ function randomValue(positionInArr, correctAnswer, countriesList) {
 
 	let randomWrongAnswers = [];
 	for (let i = 0; i < regionList.length; i++) {
-		if (regionList[i][positionInArr] === correctAnswer && correctAnswer) {
-			console.log("i--");
-		} else {
+		if (regionList[i][positionInArr] !== correctAnswer && correctAnswer) {
 			randomWrongAnswers.push(regionList[i][positionInArr]);
 
 			if (randomWrongAnswers.length >= 3) {
@@ -259,11 +271,11 @@ function startGame() {
 	mainMenu.style.display = "none";
 	mainGame.style.display = "block";
 	if (menuSelected[2] == "Normal") {
-		timerFun("start", 120, logSec);
+		timerFun("start", 90, logSec);
 	}
 
 	if (menuSelected[2] == "Hard") {
-		timerFun("start", 80, logSec);
+		timerFun("start", 60, logSec);
 	}
 	removeActiv(Array.from(menuCountriesBox));
 	removeActiv(Array.from(menuTaskBox));
@@ -308,7 +320,6 @@ btnPrevious.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
-	console.log("test key");
 	if (questionNumber < 9 && e.keyCode === 39) {
 		questionNumber++;
 		onFunBtnNextPrev();
@@ -316,7 +327,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-	console.log("test key");
 	if (questionNumber >= 1 && e.keyCode === 37) {
 		questionNumber--;
 		onFunBtnNextPrev();
@@ -563,7 +573,6 @@ function renderActivInNav(questionNumber) {
 				}
 			});
 			if (noSubmit) {
-				console.log("render in nav");
 				renderAnswers(
 					userAnswer,
 					allQuestionCollection,
@@ -588,6 +597,7 @@ function renderActivInNav(questionNumber) {
 				changeNavItemsBasedOnAnswers();
 			}
 			addActivOnNavItem();
+
 			if (elem.nodeName !== "#text") {
 				elem.style.background = "rgb(8, 159, 143)";
 				elem.style.zIndex = "2";
@@ -640,7 +650,7 @@ const btnSubmit = document.querySelector(".main__game-btn-submit");
 btnSubmit.addEventListener("click", submit);
 
 function submit(noTime = false) {
-	console.log(checkAnswerValue());
+
 	if (checkAnswerValue() || noTime) {
 		noSubmit = true;
 
